@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://theheadless.dev/sitemap.xml

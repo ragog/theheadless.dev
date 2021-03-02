@@ -1,0 +1,77 @@
+{
+  "name": "theheadless.dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev blog",
+    "build": "vuepress build blog",
+    "lint": "eslint blog/.vuepress",
+    "lint:fix": "eslint --fix blog/.vuepress"
+  },
+  "author": "",
+  "license": "CC-BY-SA-4.0",
+  "devDependencies": {
+    "@vuepress/plugin-blog": "^1.9.2",
+    "@vuepress/plugin-medium-zoom": "1.0.0",
+    "@vuepress/plugin-nprogress": "1.0.0",
+    "@vuepress/plugin-pwa": "1.0.0",
+    "@vuepress/plugin-search": "1.0.0",
+    "chrome-launcher": "^0.13.4",
+    "dayjs": "^1.8.30",
+    "eslint": "^7.3.1",
+    "eslint-config-checkly": "0.0.4",
+    "husky": "^4.2.5",
+    "lighthouse": "^6.3.0",
+    "lint-staged": "^10.2.11",
+    "lodash": "^4.17.19",
+    "node-sass": "^4.14.1",
+    "playwright": "^1.1.1",
+    "prettier": "^2.0.5",
+    "puppeteer": "^4.0.1",
+    "remove-markdown": "^0.3.0",
+    "sass-loader": "^8.0.2",
+    "striptags": "^3.1.1",
+    "vue-feather-icons": "^5.0.0",
+    "vuepress": "^1.7.1",
+    "vuepress-plugin-social-share": "^1.0.0"
+  },
+  "dependencies": {
+    "@primer/octicons": "^10.0.0",
+    "color-hash": "^1.0.3",
+    "v-tooltip": "^2.0.3",
+    "vue-tabs-component": "^1.5.0",
+    "vuepress-plugin-code-copy": "^1.0.6",
+    "vuepress-plugin-container": "^2.1.4",
+    "vuepress-plugin-mailchimp": "^1.4.2",
+    "vuepress-plugin-plausible": "0.0.2",
+    "vuepress-plugin-tabs": "^0.3.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "checkly",
+      "checkly/vue"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.vue",
+          "**/*.js"
+        ],
+        "rules": {
+          "vue/require-prop-types": "off",
+          "vue/no-unused-components": "off",
+          "no-mixed-operators": "off"
+        }
+      }
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint --cache --fix blog/.vuepress"
+  }
+}
